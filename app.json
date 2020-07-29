@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "rntemplate",
-    "slug": "rntemplate",
+    "name": "Biofenac",
+    "slug": "Biofenac",
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "orientation": "landscape",
+    "icon": "./assets/hlavni.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -17,7 +17,7 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "cz.richtergedeonbiofenac"
     },
     "web": {
       "favicon": "./assets/favicon.png"
