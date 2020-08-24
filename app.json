@@ -13,11 +13,10 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "bundleIdentifier": "cz.richtergedeonbiofenac"
+      "bundleIdentifier": "cz.richtergedeonbiofenac",
+      "supportsTablet": true
     },
     "web": {
       "favicon": "./assets/favicon.png"

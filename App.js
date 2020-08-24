@@ -4,6 +4,8 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { GlobalProvider } from "./context/GlobalContext";
+
 //Routes component
 import HlavniStranka from "./screens/HlavniStranka";
 import Ucinnost from "./screens/Ucinnost";
@@ -16,16 +18,18 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName='HlavniStranka'>
-        <Drawer.Screen name='HlavniStranka' component={HlavniStranka} />
-        <Drawer.Screen name='Ucinnost' component={Ucinnost} />
-        <Drawer.Screen name='Bezpecnost' component={Bezpecnost} />
-        <Drawer.Screen name='Ochrana' component={Ochrana} />
-        <Drawer.Screen name='Pacient' component={Pacient} />
-        <Drawer.Screen name='Dostupnost' component={Dostupnost} />
-        <Drawer.Screen name='Spc' component={SPC} />
-      </Drawer.Navigator>
-      <StatusBar hidden={true} />
+      <GlobalProvider>
+        <Drawer.Navigator initialRouteName='HlavniStranka'>
+          <Drawer.Screen name='HlavniStranka' component={HlavniStranka} />
+          <Drawer.Screen name='Ucinnost' component={Ucinnost} />
+          <Drawer.Screen name='Bezpecnost' component={Bezpecnost} />
+          <Drawer.Screen name='Ochrana' component={Ochrana} />
+          <Drawer.Screen name='Pacient' component={Pacient} />
+          <Drawer.Screen name='Dostupnost' component={Dostupnost} />
+          <Drawer.Screen name='Spc' component={SPC} />
+        </Drawer.Navigator>
+        <StatusBar hidden={true} />
+      </GlobalProvider>
     </NavigationContainer>
   );
 }
