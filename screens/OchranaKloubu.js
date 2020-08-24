@@ -1,23 +1,22 @@
 import React, { useContext } from "react";
 import { StyleSheet, Image, TouchableOpacity } from "react-native";
 import Layout from "../components/Layout";
-import { GlobalContext } from "../context/GlobalContext";
+import { useNavigation } from "@react-navigation/native";
 
 const OchranaKloubu = () => {
-  const { vypniZapniSeparovanouComponentu, vyberComponentu } = useContext(
-    GlobalContext
-  );
-  const zpracujHelpera = () => {
-    vypniZapniSeparovanouComponentu(true);
-    vyberComponentu("OCHRANA-KLOUBU");
-  };
+  const navigation = useNavigation();
+
   return (
     <Layout>
       <Image
         style={styles.image}
         source={require("../assets/fin_ochrana-kloubu.jpg")}
       />
-      <TouchableOpacity onPress={zpracujHelpera}>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("OchranaStudie");
+        }}
+      >
         <Image
           style={styles.study}
           source={require("../assets/study-icon.png")}

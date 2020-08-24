@@ -1,16 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Image, StyleSheet, TouchableOpacity } from "react-native";
 import Layout from "../components/Layout";
-import { GlobalContext } from "../context/GlobalContext";
+import { useNavigation } from "@react-navigation/native";
 
 const Ucinnost = () => {
-  const { vypniZapniSeparovanouComponentu, vyberComponentu } = useContext(
-    GlobalContext
-  );
-  const zpracujHelpera = () => {
-    vypniZapniSeparovanouComponentu(true);
-    vyberComponentu("UCINNOST");
-  };
+  const navigation = useNavigation();
 
   return (
     <Layout>
@@ -18,7 +12,11 @@ const Ucinnost = () => {
         style={styles.image}
         source={require("../assets/fin_ucinnost.jpg")}
       />
-      <TouchableOpacity onPress={zpracujHelpera}>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("UcinnostStudie");
+        }}
+      >
         <Image
           style={styles.study}
           source={require("../assets/study-icon.png")}

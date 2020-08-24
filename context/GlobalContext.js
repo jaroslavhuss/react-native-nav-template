@@ -11,7 +11,6 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(GlobalReducer, hlavniState);
 
   const vypniZapniSeparovanouComponentu = (bool) => {
-    console.log(bool);
     dispatch({
       type: "VYPNI_ZAPNI_COMPONENTU",
       payload: bool,

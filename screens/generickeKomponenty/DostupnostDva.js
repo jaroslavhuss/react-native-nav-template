@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import { View, Image, StyleSheet, TouchableOpacity, Text } from "react-native";
-import { GlobalContext } from "../../context/GlobalContext";
+import { useNavigation } from "@react-navigation/native";
 
 const DostupnostJedna = () => {
-  const { vypniZapniSeparovanouComponentu, vyberComponentu } = useContext(
-    GlobalContext
-  );
+  const { navigate } = useNavigation();
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => {
-          vypniZapniSeparovanouComponentu(false);
+          //clg
+          navigate("Dostupnost");
         }}
       >
         <Image
@@ -21,7 +21,7 @@ const DostupnostJedna = () => {
       </TouchableOpacity>
       <Text
         onPress={() => {
-          vyberComponentu("DOSTUPNOST");
+          navigate("DostupnostJedna");
         }}
         style={styles.sipka}
       >
@@ -47,9 +47,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     left: "55%",
-    marginBottom: 30,
+    marginBottom: 24,
     fontWeight: "bold",
     padding: 10,
+    backgroundColor: "#d0cece",
+    width: 90,
+    textAlign: "center",
   },
   container: {
     width: "100%",

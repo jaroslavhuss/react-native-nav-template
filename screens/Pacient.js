@@ -1,23 +1,21 @@
-import React, { useContext } from "react";
+import React from "react";
 import { StyleSheet, Image, TouchableOpacity } from "react-native";
 import Layout from "../components/Layout";
-import { GlobalContext } from "../context/GlobalContext";
+import { useNavigation } from "@react-navigation/native";
 
 const Pacient = () => {
-  const { vypniZapniSeparovanouComponentu, vyberComponentu } = useContext(
-    GlobalContext
-  );
-  const zpracujHelpera = () => {
-    vypniZapniSeparovanouComponentu(true);
-    vyberComponentu("PACIENT");
-  };
+  const { navigate } = useNavigation();
   return (
     <Layout>
       <Image
         style={styles.image}
         source={require("../assets/fin_pacient.jpg")}
       />
-      <TouchableOpacity onPress={zpracujHelpera}>
+      <TouchableOpacity
+        onPress={() => {
+          navigate("PacientStudie");
+        }}
+      >
         <Image
           style={styles.study}
           source={require("../assets/study-icon.png")}

@@ -1,16 +1,10 @@
 import React, { useContext } from "react";
 import { StyleSheet, Image, TouchableOpacity } from "react-native";
 import Layout from "../components/Layout";
-import { GlobalContext } from "../context/GlobalContext";
+import { useNavigation } from "@react-navigation/native";
 
 const Bezpecnost = () => {
-  const { vypniZapniSeparovanouComponentu, vyberComponentu } = useContext(
-    GlobalContext
-  );
-  const zpracujHelpera = () => {
-    vypniZapniSeparovanouComponentu(true);
-    vyberComponentu("BEZPECNOST");
-  };
+  const navigation = useNavigation();
 
   return (
     <Layout>
@@ -18,7 +12,11 @@ const Bezpecnost = () => {
         style={styles.image}
         source={require("../assets/fin_bezpecnost.jpg")}
       />
-      <TouchableOpacity onPress={zpracujHelpera}>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("BezpecnostStudie");
+        }}
+      >
         <Image
           style={styles.study}
           source={require("../assets/study-icon.png")}

@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
-import { GlobalContext } from "../../context/GlobalContext";
+import { useNavigation } from "@react-navigation/native";
 
 const PacientStudie = () => {
-  const { vypniZapniSeparovanouComponentu } = useContext(GlobalContext);
+  const { navigate } = useNavigation();
   return (
     <View>
       <TouchableOpacity
         onPress={() => {
-          vypniZapniSeparovanouComponentu(false);
+          navigate("Pacient");
         }}
       >
         <Image
