@@ -1,13 +1,8 @@
 import React from "react";
 import { WebView } from "react-native-webview";
-import pdf from "../assets/biofenac-spc.pdf";
-import Layout from "../components/Layout";
+import pdf from "../assets/gordius-spc.pdf";
 const Spc = () => {
-  return (
-    <Layout>
-      <WebView source={pdf}></WebView>
-    </Layout>
-  );
+  return <WebView source={pdf}></WebView>;
 };
 
 export default Spc;

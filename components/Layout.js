@@ -1,17 +1,21 @@
-import React, { useContext } from "react";
-import { View, StyleSheet } from "react-native";
+import React from "react";
+import { View, StyleSheet, Image } from "react-native";
 import Menu from "../components/Menu";
-import GenerickaKomponenta from "./GenerickaKomponenta";
-import { GlobalContext } from "../context/GlobalContext";
 const Layout = ({ children }) => {
-  const { zobrazitSeparovanouComponentu } = useContext(GlobalContext);
   return (
     <View style={styles.flexniTo}>
       <View style={styles.menu}>
         <Menu />
       </View>
-      <View style={styles.obsah}>{children}</View>
-      {zobrazitSeparovanouComponentu ? <GenerickaKomponenta /> : <></>}
+      <View style={styles.obsah}>
+        <View style={{ padding: 20 }}>
+          <Image
+            style={{ alignSelf: "flex-end" }}
+            source={require("../assets/toprightlogo.jpg")}
+          />
+        </View>
+        {children}
+      </View>
     </View>
   );
 };
@@ -30,5 +34,6 @@ const styles = StyleSheet.create({
   },
   obsah: {
     width: "80%",
+    backgroundColor: "white",
   },
 });

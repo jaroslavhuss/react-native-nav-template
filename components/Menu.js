@@ -1,83 +1,88 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   View,
   TouchableOpacity,
   Text,
   StyleSheet,
   Image,
-  ImageBackground,
+  Alert,
+  Linking,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import Logo from "../assets/white_logo.png";
-import bgImg from "../assets/menu_background.jpg";
-
+import PDF from "../assets/gordius-spc.pdf";
 const Menu = () => {
   const navigation = useNavigation();
 
   return (
-    <ImageBackground source={bgImg} style={styles.back}>
-      <View>
-        <TouchableOpacity
+    <View
+      style={{ backgroundColor: "white", height: "100%", position: "relative" }}
+    >
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("HlavniStranka");
+        }}
+      >
+        <Image source={require("../assets/jezek.jpg")} />
+      </TouchableOpacity>
+      <View style={styles.menuFlex}>
+        <Text
+          index='Indikace'
+          style={styles.menuItem}
           onPress={() => {
-            navigation.navigate("HlavniStranka");
+            navigation.navigate("Indikace");
           }}
-          style={{ padding: 10 }}
         >
-          <Image source={Logo} style={styles.logo} />
-        </TouchableOpacity>
-        <View style={styles.menuFlex}>
-          <Text
-            style={styles.menuItem}
-            onPress={(e) => {
-              navigation.navigate("Ucinnost");
-            }}
-          >
-            <Text>Účinnost</Text>
-          </Text>
-          <Text
-            style={styles.menuItem}
-            onPress={(e) => {
-              navigation.navigate("Bezpecnost");
-            }}
-          >
-            <Text>Bezpečnost</Text>
-          </Text>
-          <Text
-            style={styles.menuItem}
-            onPress={() => {
-              navigation.navigate("Ochrana");
-            }}
-          >
-            <Text>Ochrana kloubů</Text>
-          </Text>
-          <Text
-            style={styles.menuItem}
-            onPress={() => {
-              navigation.navigate("Pacient");
-            }}
-          >
-            <Text>Pacient</Text>
-          </Text>
-          <Text
-            style={styles.menuItem}
-            onPress={() => {
-              navigation.navigate("Dostupnost");
-            }}
-          >
-            <Text>Dostupnost</Text>
-          </Text>
-          <Text
-            style={styles.menuItem}
-            onPress={() => {
-              navigation.navigate("Spc");
-            }}
-          >
-            {" "}
-            <Text>SPC</Text>
-          </Text>
-        </View>
+          <Text style={styles.item}>INDIKACE</Text>
+        </Text>
+        <Text
+          index='LekovyProfil'
+          style={styles.menuItem}
+          onPress={() => {
+            navigation.navigate("LekovyProfil");
+          }}
+        >
+          <Text style={styles.item}>LÉKOVÝ PROFIL</Text>
+        </Text>
+        <Text
+          index='Davkovani'
+          style={styles.menuItem}
+          onPress={() => {
+            navigation.navigate("Davkovani");
+          }}
+        >
+          <Text style={styles.item}>DÁVKOVÁNÍ</Text>
+        </Text>
+        <Text
+          index='Baleni'
+          style={styles.menuItem}
+          onPress={() => {
+            navigation.navigate("Baleni");
+          }}
+        >
+          <Text style={styles.item}>BALENÍ</Text>
+        </Text>
+
+        <Text
+          index='Spc'
+          style={styles.menuItem}
+          onPress={() => {
+            Alert.alert(
+              "Hodláte otevřít SPC",
+              "Z PDF se dostanete přetažením prstu od levého kraje ipadu",
+              [{ text: "Rozumím!", onPress: () => navigation.navigate("Spc") }],
+              { cancelable: false }
+            );
+          }}
+        >
+          {" "}
+          <Text style={styles.item}>SPC</Text>
+        </Text>
       </View>
-    </ImageBackground>
+      <Image
+        style={{ position: "absolute", bottom: 0 }}
+        source={require("../assets/krabicka_logo.jpg")}
+      />
+    </View>
   );
 };
 
@@ -94,7 +99,7 @@ const styles = StyleSheet.create({
   },
   menuFlex: {
     justifyContent: "space-around",
-    marginTop: 180,
+    marginTop: 80,
   },
   active: {
     color: "purple",
@@ -102,5 +107,11 @@ const styles = StyleSheet.create({
   back: {
     width: "100%",
     height: "100%",
+  },
+  item: {
+    color: "grey",
+  },
+  active: {
+    color: "red",
   },
 });

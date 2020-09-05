@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Text,
-  ImageBackground,
-  StyleSheet,
-  TouchableOpacity,
-} from "react-native";
-import bg from "../assets/1.png";
+import { ImageBackground, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const HlavniStranka = () => {
@@ -13,10 +7,13 @@ const HlavniStranka = () => {
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate("Ucinnost");
+        navigation.navigate("Indikace");
       }}
     >
-      <ImageBackground source={bg} style={styles.back}></ImageBackground>
+      <ImageBackground
+        source={require("../assets/splash.png")}
+        style={styles.back}
+      ></ImageBackground>
     </TouchableOpacity>
   );
 };

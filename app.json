@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Biofenac",
-    "slug": "Biofenac",
+    "name": "Gordius",
+    "slug": "Gordius",
     "version": "1.0.0",
     "orientation": "landscape",
     "icon": "./assets/hlavni.png",
@@ -16,7 +16,8 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "bundleIdentifier": "cz.richtergedeonbiofenac",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "requireFullScreen": true
     },
     "web": {
       "favicon": "./assets/favicon.png"

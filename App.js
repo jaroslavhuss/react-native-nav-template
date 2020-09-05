@@ -1,67 +1,42 @@
 import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet } from "react-native";
+import React, { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { GlobalProvider } from "./context/GlobalContext";
+import {} from "react-native";
+import * as ScreenOrientation from "expo-screen-orientation";
 
 //Routes component
 import HlavniStranka from "./screens/HlavniStranka";
-import Ucinnost from "./screens/Ucinnost";
-import Bezpecnost from "./screens/Bezpecnost";
-import Ochrana from "./screens/OchranaKloubu";
-import Pacient from "./screens/Pacient";
-import Dostupnost from "./screens/Dostopnost";
+import Indikace from "./screens/Indikace";
+import LekovyProfil from "./screens/LekovyProfil";
+import Davkovani from "./screens/Davkovani";
+import Baleni from "./screens/Baleni";
 import SPC from "./screens/Spc";
 
 //Studie
-import UcinnostStudie from "./screens/generickeKomponenty/Ucinnost";
-import BezpecnostStudie from "./screens/generickeKomponenty/BezpecnostStudie";
-import OchranaKloubuStudie from "./screens/generickeKomponenty/OchranaKloubuStudie";
-import PacientStudie from "./screens/generickeKomponenty/PacientStudie";
-import DostupnostStudieJedna from "./screens/generickeKomponenty/DostupnostJedna";
-import DostupnostStudieDva from "./screens/generickeKomponenty/DostupnostDva";
+
 const Drawer = createDrawerNavigator();
 export default function App() {
+  useEffect(() => {
+    ScreenOrientation.lockAsync(
+      ScreenOrientation.OrientationLock.LANDSCAPE_RIGHT
+    );
+    return () => {
+      return false;
+    };
+  }, []);
   return (
     <NavigationContainer>
-      <GlobalProvider>
-        <Drawer.Navigator initialRouteName='HlavniStranka'>
-          <Drawer.Screen name='HlavniStranka' component={HlavniStranka} />
-
-          <Drawer.Screen name='Ucinnost' component={Ucinnost} />
-          <Drawer.Screen name='UcinnostStudie' component={UcinnostStudie} />
-
-          <Drawer.Screen name='Bezpecnost' component={Bezpecnost} />
-          <Drawer.Screen name='BezpecnostStudie' component={BezpecnostStudie} />
-
-          <Drawer.Screen name='Ochrana' component={Ochrana} />
-          <Drawer.Screen name='OchranaStudie' component={OchranaKloubuStudie} />
-
-          <Drawer.Screen name='Pacient' component={Pacient} />
-          <Drawer.Screen name='PacientStudie' component={PacientStudie} />
-
-          <Drawer.Screen name='Dostupnost' component={Dostupnost} />
-          <Drawer.Screen
-            name='DostupnostJedna'
-            component={DostupnostStudieJedna}
-          />
-          <Drawer.Screen name='DostupnostDva' component={DostupnostStudieDva} />
-
-          <Drawer.Screen name='Spc' component={SPC} />
-        </Drawer.Navigator>
-        <StatusBar hidden={true} />
-      </GlobalProvider>
+      <Drawer.Navigator initialRouteName='HlavniStranka'>
+        <Drawer.Screen name='HlavniStranka' component={HlavniStranka} />
+        <Drawer.Screen name='Indikace' component={Indikace} />
+        <Drawer.Screen name='LekovyProfil' component={LekovyProfil} />
+        <Drawer.Screen name='Davkovani' component={Davkovani} />
+        <Drawer.Screen name='Baleni' component={Baleni} />
+        <Drawer.Screen name='Spc' component={SPC} />
+      </Drawer.Navigator>
+      <StatusBar hidden={true} />
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
