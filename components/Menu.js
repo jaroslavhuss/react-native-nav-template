@@ -66,12 +66,7 @@ const Menu = () => {
           index='Spc'
           style={styles.menuItem}
           onPress={() => {
-            Alert.alert(
-              "Hodláte otevřít SPC",
-              "Z PDF se dostanete přetažením prstu od levého kraje ipadu",
-              [{ text: "Rozumím!", onPress: () => navigation.navigate("Spc") }],
-              { cancelable: false }
-            );
+            navigation.navigate("Spc");
           }}
         >
           {" "}

@@ -3,7 +3,7 @@
     "name": "Gordius",
     "slug": "Gordius",
     "version": "1.0.0",
-    "orientation": "landscape",
+    "orientation": "portrait",
     "icon": "./assets/hlavni.png",
     "splash": {
       "image": "./assets/splash.png",
