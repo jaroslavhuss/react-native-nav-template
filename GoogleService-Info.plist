@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>347173640352-a05fhn7fv1pdh4apj6ds9bkgm4a5sjkf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.347173640352-a05fhn7fv1pdh4apj6ds9bkgm4a5sjkf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAdX4GBn1AROKC91FqKOuXlbaYhrq_miD4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>347173640352</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>cz.richtergedeonbiofenac</string>
+	<key>PROJECT_ID</key>
+	<string>gordius-ipad</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gordius-ipad.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:347173640352:ios:7a3868f84d231b6f5011c5</string>
+</dict>
+</plist>

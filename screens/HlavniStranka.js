@@ -1,8 +1,14 @@
 import React from "react";
 import { ImageBackground, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import * as Analytics from 'expo-firebase-analytics'; 
 
 const HlavniStranka = () => {
+  Analytics.logEvent('hlavni_stranka', {
+    contentType: 'text', 
+    itemId: 'Expo rocks!', 
+    method: 'facebook'
+  });
   const navigation = useNavigation();
   return (
     <TouchableOpacity

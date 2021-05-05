@@ -5,8 +5,6 @@ import {
   Text,
   StyleSheet,
   Image,
-  Alert,
-  Linking,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import PDF from "../assets/gordius-spc.pdf";
@@ -74,7 +72,7 @@ const Menu = () => {
         </Text>
       </View>
       <Image
-        style={{ position: "absolute", bottom: 0 }}
+        style={styles.krabicka}
         source={require("../assets/krabicka_logo.jpg")}
       />
     </View>
@@ -84,6 +82,11 @@ const Menu = () => {
 export default Menu;
 
 const styles = StyleSheet.create({
+  krabicka:{
+    resizeMode:"contain",
+    flex:1,
+    width:230
+  },
   menuItem: {
     padding: 15,
     color: "white",

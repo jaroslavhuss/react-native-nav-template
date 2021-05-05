@@ -3,7 +3,7 @@
     "name": "Gordius",
     "slug": "Gordius",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "landscape",
     "icon": "./assets/hlavni.png",
     "splash": {
       "image": "./assets/splash.png",
@@ -17,10 +17,23 @@
     "ios": {
       "bundleIdentifier": "cz.richtergedeonbiofenac",
       "supportsTablet": true,
-      "requireFullScreen": true
+      "requireFullScreen": true,
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "favicon": "./assets/favicon.png",
+      "config": {
+        "firebase": {
+          "apiKey": "AIzaSyCjY2-SFnRH7GDxu82zb3qO4JJg7QorM_g",
+          "authDomain": "gordius-ipad.firebaseapp.com",
+          "projectId": "gordius-ipad",
+          "storageBucket": "gordius-ipad.appspot.com",
+          "messagingSenderId": "347173640352",
+          "appId": "1:347173640352:web:827e3cf14fbc0ade5011c5",
+          "measurementId": "G-DY97E2ZZ1N"
+        }
+      }
     }
   }
 }

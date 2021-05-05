@@ -1,8 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Layout from "../components/Layout";
-
+import * as Analytics from 'expo-firebase-analytics'; 
 const LekovyProfil = () => {
+  Analytics.logEvent('lekovy_profil', {
+    contentType: 'text', 
+    itemId: 'Expo rocks!', 
+    method: 'facebook'
+  });
   const { mainColor, sizeOfFont, bold, grey, nadpis } = styles;
   return (
     <Layout>
@@ -30,14 +35,15 @@ const LekovyProfil = () => {
           - Příznivý vliv na kvalitu spánku a emoční ladění
         </Text>
         <Text>
-          <Text style={[grey, sizeOfFont, bold]}>
-            {"       "}využití u neuropsychiatrických poruch:{"\n"}
+          <Text style={[grey, sizeOfFont, bold, mainColor]}>
+            {"       "}- využití u neuropsychiatrických poruch:{"\n"}
           </Text>
+          <Text>{"\n"}</Text>
           <Text style={[grey, sizeOfFont]}>
             {"       "}- syndrom neklidných nohou{"\n"}
           </Text>
           <Text style={[grey, sizeOfFont]}>
-            {"       "}- profylaktická léčba migrény{"\n"}
+            {"       "}- profylaxe migrény{"\n"}
           </Text>
           <Text style={[grey, sizeOfFont]}>
             {"       "}- tremor{"\n"}

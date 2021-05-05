@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Layout from "../components/Layout";
-
+import * as Analytics from 'expo-firebase-analytics'; 
 const Indikace = () => {
+  Analytics.logEvent('indikace', {
+    contentType: 'text', 
+    itemId: 'Expo rocks!', 
+    method: 'facebook'
+  });
   const [showComponent, setShowComponent] = useState(false);
   const {
     double,
@@ -21,7 +26,7 @@ const Indikace = () => {
         <Text style={[lesser, mainColor, sizeOfFont, bold, nadpis]}>1)</Text>
         <View style={bigger}>
           <Text style={[mainColor, sizeOfFont, bold, nadpis]}>
-            Léčba periferní neuropatické bolesti u dospělých
+            Léčba periferní neuropatické bolesti{"\n"}u dospělých
           </Text>
           <Text style={{ marginTop: 10 }}></Text>
           <Text style={[grey, sizeOfFont]}>

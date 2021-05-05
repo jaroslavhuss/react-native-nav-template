@@ -1,8 +1,14 @@
 import React from "react";
 import { StyleSheet, Image, Text, View } from "react-native";
 import Layout from "../components/Layout";
+import * as Analytics from 'expo-firebase-analytics'; 
 
 const Baleni = () => {
+  Analytics.logEvent('baleni_gordius', {
+    contentType: 'text', 
+    itemId: 'Expo rocks!', 
+    method: 'facebook'
+  });
   const { mainColor, sizeOfFont, bold, grey, nadpis } = styles;
   return (
     <Layout>
@@ -10,9 +16,9 @@ const Baleni = () => {
       <View>
         <Text>
           <Text style={[nadpis]}>
-            Od 1.6 2018{" "}
-            <Text style={[bold, mainColor]}>bez preskripčního omezení</Text> v
-            indikaci{" "}
+           
+            <Text style={[bold, mainColor]}>Bez preskripčního omezení</Text> <Text style={bold}>v
+            indikaci{"\n"}</Text>
             <Text style={[bold, mainColor]}>Periferní neuropatická bolest</Text>
             . {"\n"}
           </Text>
@@ -31,11 +37,12 @@ const Baleni = () => {
             <Text style={bold}>
               na základě preskripce neurologa a psychiatra
             </Text>
-            pro léčbu parciálních záchvatů epilepsie se sekundární generalizací
-            nebo bez ní.
-            {"\n"}
-            {"\n"}
+            {" "}pro léčbu parciálních {"\n"}
+          
           </Text>
+          <Text style={[sizeOfFont]}>{"    "}záchvatů epilepsie se sekundární generalizací
+            nebo bez ní.</Text>
+
           <Text
             style={{
               fontSize: 10,
@@ -44,13 +51,15 @@ const Baleni = () => {
               textAlign: "center",
             }}
           >
+            {"\n\n\n"}
             Zdroj: Rozhodnutí SÚKL. Sp. Zn. SUKLS101873/2014, č.j.
             sukl176811/2018, dne 29. 3. 2018, staženo z www.sukl.cz.
+     
           </Text>
         </Text>
-        <Text style={{ marginTop: 30 }}></Text>
-        <Image source={require("../assets/gordius_cenik_final.jpg")} />
-      </View>
+        <Image style={{resizeMode:"contain", width:820, marginTop:-120}} source={require("../assets/final_table.png")} />
+    
+       </View>
     </Layout>
   );
 };
