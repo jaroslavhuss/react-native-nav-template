@@ -73,7 +73,7 @@ const Menu = () => {
       </View>
       <Image
         style={styles.krabicka}
-        source={require("../assets/krabicka_logo.jpg")}
+        source={require("../assets/krabicka_logo2.png")}
       />
     </View>
   );

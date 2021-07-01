@@ -18,14 +18,6 @@ import SPC from "./screens/Spc";
 
 const Drawer = createDrawerNavigator();
 export default function App() {
-  useEffect(() => {
-    ScreenOrientation.lockAsync(
-      ScreenOrientation.OrientationLock.LANDSCAPE_RIGHT
-    );
-    return () => {
-      return false;
-    };
-  }, []);
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName='HlavniStranka'>

@@ -34,24 +34,24 @@ const LekovyProfil = () => {
         <Text style={[mainColor, sizeOfFont, bold, nadpis]}>
           - Příznivý vliv na kvalitu spánku a emoční ladění
         </Text>
-        <Text>
-          <Text style={[grey, sizeOfFont, bold, mainColor]}>
-            {"       "}- využití u neuropsychiatrických poruch:{"\n"}
+      
+        <Text style={[mainColor, sizeOfFont, bold, nadpis]}>
+            - Využití u neuropsychiatrických poruch
           </Text>
-          <Text>{"\n"}</Text>
+      
           <Text style={[grey, sizeOfFont]}>
-            {"       "}- syndrom neklidných nohou{"\n"}
-          </Text>
-          <Text style={[grey, sizeOfFont]}>
-            {"       "}- profylaxe migrény{"\n"}
+            {"         "}- syndrom neklidných nohou
           </Text>
           <Text style={[grey, sizeOfFont]}>
-            {"       "}- tremor{"\n"}
+            {"         "}- profylaxe migrény
           </Text>
           <Text style={[grey, sizeOfFont]}>
-            {"       "}- abstinenční syndrom{"\n"}
+            {"         "}- tremor
           </Text>
-        </Text>
+          <Text style={[grey, sizeOfFont]}>
+            {"         "}- abstinenční syndrom
+          </Text>
+   
       </View>
     </Layout>
   );
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     maxWidth: "95%",
   },
   nadpis: {
-    fontSize: 35,
+    fontSize: 30,
     margin: 20,
   },
 });

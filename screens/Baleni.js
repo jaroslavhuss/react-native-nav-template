@@ -17,10 +17,10 @@ const Baleni = () => {
         <Text>
           <Text style={[nadpis]}>
            
-            <Text style={[bold, mainColor]}>Bez preskripčního omezení</Text> <Text style={bold}>v
-            indikaci{"\n"}</Text>
-            <Text style={[bold, mainColor]}>Periferní neuropatická bolest</Text>
-            . {"\n"}
+            <Text style={[bold, mainColor]}>Bez preskripčního omezení {"\n"}</Text> 
+            <Text style={bold}>v
+            indikaci</Text><Text style={[bold, mainColor]}> periferní neuropatická bolest</Text>
+             {"\n"}
           </Text>
           <Text style={{ marginTop: 20 }}>{"\n"}</Text>
           <Text style={sizeOfFont}>
