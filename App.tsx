@@ -20,7 +20,9 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName='HlavniStranka'>
+      <Drawer.Navigator initialRouteName='HlavniStranka' screenOptions={{
+  headerShown:false
+    }}>
         <Drawer.Screen name='HlavniStranka' component={HlavniStranka} />
         <Drawer.Screen name='Indikace' component={Indikace} />
         <Drawer.Screen name='LekovyProfil' component={LekovyProfil} />
